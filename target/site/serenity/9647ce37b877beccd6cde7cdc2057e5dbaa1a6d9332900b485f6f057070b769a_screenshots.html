@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="fb5605e415a96e3ee9742132e1f0a7f454f63ee830592381fe36fd9726ee712e.html">Navegacion En Barra Principal</a></span>
+                > <span class="truncate-60"><a
+                    href="9647ce37b877beccd6cde7cdc2057e5dbaa1a6d9332900b485f6f057070b769a.html">Navegar a traves de las paginas principales </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 22-06-2023 13:51</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Navegacion En Barra Principal </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                            <div class="requirementNarrative">Background: Usuario visita la pagina de Inicio
+                                    <p></p>
+                            </div>
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">Chrome
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">Chrome, Windows
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Navegar a traves de las paginas principales
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" Given que un usuario visita la pagina de Inicio" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" User opens the browser at https://mcdonalds.com.gt/" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" Given que un usuario visita la pagina de Inicio (completed)" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" When la ventana emergente aparece" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" User ventana emergente" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" Then el usuario puede ver el texto &quot;Conoce nuestro men&uacute; y elige tu favorito&quot;" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" Then Contiene" width="1295"/>
+                <img src="5afcd92cee9eb53c145000367de7a3532d64533ba8865e0f7be20546a3b6ba60.png" title=" When el usuario hace clic en &quot;Men&uacute;&quot;" width="1295"/>
+                <img src="5afcd92cee9eb53c145000367de7a3532d64533ba8865e0f7be20546a3b6ba60.png" title=" User navegacion menu" width="1295"/>
+                <img src="5afcd92cee9eb53c145000367de7a3532d64533ba8865e0f7be20546a3b6ba60.png" title=" User clicks on boton para ir a la ventana men&uacute;" width="1295"/>
+                <img src="5afcd92cee9eb53c145000367de7a3532d64533ba8865e0f7be20546a3b6ba60.png" title=" User navegacion menu (completed)" width="1295"/>
+                <img src="5afcd92cee9eb53c145000367de7a3532d64533ba8865e0f7be20546a3b6ba60.png" title=" When el usuario hace clic en &quot;Men&uacute;&quot; (completed)" width="1295"/>
+                <img src="2f3b7b6675c151d334c5bc218e84db97f2fd29b25be51282474ba8f7d86b7f1f.png" title=" Then el usuario es redirigido y ve la palabra &quot;Men&uacute;&quot;" width="1295"/>
+                <img src="2f3b7b6675c151d334c5bc218e84db97f2fd29b25be51282474ba8f7d86b7f1f.png" title=" Then Contiene" width="1295"/>
+                <img src="2f3b7b6675c151d334c5bc218e84db97f2fd29b25be51282474ba8f7d86b7f1f.png" title=" Then el usuario es redirigido y ve la palabra &quot;Men&uacute;&quot; (completed)" width="1295"/>
+                <img src="f3ba848b39cade40e945f04e6c4b51cfd6da286f3045b43622d4d5adc27fcde4.png" title=" When el usuario hace clic en &quot;Ubicaciones&quot;" width="1295"/>
+                <img src="f3ba848b39cade40e945f04e6c4b51cfd6da286f3045b43622d4d5adc27fcde4.png" title=" User navegacion menu" width="1295"/>
+                <img src="ee8583c59430bd4a796af4bf2087e42830804b5efef4afb1d6d9b79f718912a0.png" title=" User clicks on boton para ir a la ventana ubicaciones" width="1295"/>
+                <img src="d4ee3601b0cc4b39cbd274baea356c44051cdc854f436e072186e7d005381d6a.png" title=" User clicks on boton para ir a la ventana ubicaciones (completed)" width="1295"/>
+                <img src="d4ee3601b0cc4b39cbd274baea356c44051cdc854f436e072186e7d005381d6a.png" title=" User navegacion menu (completed)" width="1295"/>
+                <img src="d4ee3601b0cc4b39cbd274baea356c44051cdc854f436e072186e7d005381d6a.png" title=" When el usuario hace clic en &quot;Ubicaciones&quot; (completed)" width="1295"/>
+                <img src="eedff839815be8772d74597f7a8e9cb83c6356903857e1efe7334abedb41e808.png" title=" Then el usuario es redirigido y ve la palabra &quot;Filtros&quot;" width="1295"/>
+                <img src="eedff839815be8772d74597f7a8e9cb83c6356903857e1efe7334abedb41e808.png" title=" Then Contiene" width="1295"/>
+                <img src="2abf7a27bbf1cfea92631daddb96936879dfc80e113acdf65d894111694b94c4.png" title=" Then Contiene (completed)" width="1295"/>
+                <img src="2abf7a27bbf1cfea92631daddb96936879dfc80e113acdf65d894111694b94c4.png" title=" Then el usuario es redirigido y ve la palabra &quot;Filtros&quot; (completed)" width="1295"/>
+                <img src="e8e3e80167d82c0e6c753e015c6ea6fc100177db8392e6dec433b9b44f0a4838.png" title=" When el usuario hace clic en &quot;Promociones &amp; Apps&quot;" width="1295"/>
+                <img src="e8e3e80167d82c0e6c753e015c6ea6fc100177db8392e6dec433b9b44f0a4838.png" title=" User navegacion menu" width="1295"/>
+                <img src="c0065a89d951f5d9ce948979e6a86246b2673797f2490a5813fceca093f99e3c.png" title=" User clicks on boton para ir a la ventana promocines y apps" width="1295"/>
+                <img src="532808ca93d02c9a0c32e6f319ac3ed54d63fab5e553cd35865171834a91f5d7.png" title=" User clicks on boton para ir a la ventana promocines y apps (completed)" width="1295"/>
+                <img src="532808ca93d02c9a0c32e6f319ac3ed54d63fab5e553cd35865171834a91f5d7.png" title=" User navegacion menu (completed)" width="1295"/>
+                <img src="532808ca93d02c9a0c32e6f319ac3ed54d63fab5e553cd35865171834a91f5d7.png" title=" When el usuario hace clic en &quot;Promociones &amp; Apps&quot; (completed)" width="1295"/>
+                <img src="0a343903b870c1389f49a1fe8d93efa0b21d8943f087828c83cd5a39f4975f26.png" title=" Then el usuario es redirigido y ve la palabra &quot;Promociones&quot;" width="1295"/>
+                <img src="0a343903b870c1389f49a1fe8d93efa0b21d8943f087828c83cd5a39f4975f26.png" title=" Then Contiene" width="1295"/>
+                <img src="0a343903b870c1389f49a1fe8d93efa0b21d8943f087828c83cd5a39f4975f26.png" title=" Then el usuario es redirigido y ve la palabra &quot;Promociones&quot; (completed)" width="1295"/>
+                <img src="0c8c7867bdb5eaf3b6180cecf08203b1f4c2ffd3cd9a0cd6d4eea2700945ddaa.png" title=" When el usuario hace clic en &quot;Cajita Feliz&quot;" width="1295"/>
+                <img src="0c8c7867bdb5eaf3b6180cecf08203b1f4c2ffd3cd9a0cd6d4eea2700945ddaa.png" title=" User navegacion menu" width="1295"/>
+                <img src="0c8c7867bdb5eaf3b6180cecf08203b1f4c2ffd3cd9a0cd6d4eea2700945ddaa.png" title=" User clicks on boton para ir a la ventana cajita feliz" width="1295"/>
+                <img src="0c8c7867bdb5eaf3b6180cecf08203b1f4c2ffd3cd9a0cd6d4eea2700945ddaa.png" title=" User navegacion menu (completed)" width="1295"/>
+                <img src="0c8c7867bdb5eaf3b6180cecf08203b1f4c2ffd3cd9a0cd6d4eea2700945ddaa.png" title=" When el usuario hace clic en &quot;Cajita Feliz&quot; (completed)" width="1295"/>
+                <img src="2c87575f3986ffe39eb08cc37bb132b226f6746d79f70614e22fd0fcc55ba8ed.png" title=" Then el usuario es redirigido y ve la palabra &quot;Diversi&oacute;n en Familia&quot;" width="1295"/>
+                <img src="2c87575f3986ffe39eb08cc37bb132b226f6746d79f70614e22fd0fcc55ba8ed.png" title=" Then Contiene" width="1295"/>
+                <img src="98242b611e827ea3296be8da73d55e2e1b5e24422c8d92d2ad406a595f908717.png" title=" Then Contiene (completed)" width="1295"/>
+                <img src="98242b611e827ea3296be8da73d55e2e1b5e24422c8d92d2ad406a595f908717.png" title=" Then el usuario es redirigido y ve la palabra &quot;Diversi&oacute;n en Familia&quot; (completed)" width="1295"/>
+                <img src="6809fd586fa986874e7c3efc4201f461b63d9f44739dbaa0dd8a9728898f9c5c.png" title=" When el usuario hace clic en &quot;Servicio al cliente&quot;" width="1295"/>
+                <img src="6809fd586fa986874e7c3efc4201f461b63d9f44739dbaa0dd8a9728898f9c5c.png" title=" User navegacion menu" width="1295"/>
+                <img src="2924945a03e8030ee077cd51fa63947488cac2a1e355f66a2d3ba8a7971a4987.png" title=" User clicks on boton para ir a la ventana cajita feliz" width="1295"/>
+                <img src="fccf43152aef292936eb7d482e69c75bac447593bfcc59fbfbb7d833783f1c4a.png" title=" User clicks on boton para ir a la ventana cajita feliz (completed)" width="1295"/>
+                <img src="fccf43152aef292936eb7d482e69c75bac447593bfcc59fbfbb7d833783f1c4a.png" title=" User navegacion menu (completed)" width="1295"/>
+                <img src="fccf43152aef292936eb7d482e69c75bac447593bfcc59fbfbb7d833783f1c4a.png" title=" When el usuario hace clic en &quot;Servicio al cliente&quot; (completed)" width="1295"/>
+                <img src="7b7d4cfa33854807cac833dee4ac538595e5cd662916e85a34ec4a36380da53a.png" title=" Then el usuario es redirigido y ve la palabra &quot;Quejas&quot;" width="1295"/>
+                <img src="7b7d4cfa33854807cac833dee4ac538595e5cd662916e85a34ec4a36380da53a.png" title=" Then Contiene" width="1295"/>
+                <img src="7b7d4cfa33854807cac833dee4ac538595e5cd662916e85a34ec4a36380da53a.png" title=" Then el usuario es redirigido y ve la palabra &quot;Quejas&quot; (completed)" width="1295"/>
+                <img src="7b7d4cfa33854807cac833dee4ac538595e5cd662916e85a34ec4a36380da53a.png" title=" And da clic en Logo McDonald's" width="1295"/>
+                <img src="7b7d4cfa33854807cac833dee4ac538595e5cd662916e85a34ec4a36380da53a.png" title=" User start page" width="1295"/>
+                <img src="7b7d4cfa33854807cac833dee4ac538595e5cd662916e85a34ec4a36380da53a.png" title=" User clicks on boton para ir a la ventana de inicio" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" Then el usuario puede ver el texto &quot;Conoce nuestro men&uacute; y elige tu favorito&quot;" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" Then Contiene" width="1295"/>
+                <img src="334ae7c0e30ad4ac1bcf0ec4ae18025930a31a1f6e0eae665554faf69cba926c.png" title=" Then el usuario puede ver el texto &quot;Conoce nuestro men&uacute; y elige tu favorito&quot; (completed): <span class='success-color'>SUCCESS</span>" width="1295"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.7.1</span>
+</div>
+</body>
+</html>

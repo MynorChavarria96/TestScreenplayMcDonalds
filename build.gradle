@@ -1,0 +1,55 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+group = 'gt.com.mcdonalds'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+ext {
+    serenityVersion = '3.7.1'
+    junitVersion = '5.8.1'
+    slf4jVersion = '2.0.7'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        configurations.all{
+            exclude group: 'org.codehaus.groovy', module: 'groovy'
+        }
+        classpath "net.serenity-bdd:serenity-gradle-plugin:2.4.34"
+        classpath "net.serenity-bdd:serenity-single-page-report:3.6.22"
+    }
+
+}
+serenity {
+    reports =["single-page-html"]
+}
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+
+    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: "${serenityVersion}" //Para Interaccion con los Tags de Serenity
+    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: "${serenityVersion}"//Para generar los Runners por medio de Junit y Serenity
+    testImplementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: "${serenityVersion}"//Cucumber para que nos reconozca que estamos trabajando con Gherkin
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: "${serenityVersion}" //Para optimizar el patron de diseño
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: "${serenityVersion}"//Opcional, trae un webdriver incluiudo en la libreria
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: "${slf4jVersion}"//Para Generar los Logs en la Terminal
+}
+
+test {
+    useJUnitPlatform()
+}
+gradle.startParameter.continueOnFailure = true
+test.finalizedBy(aggregate, reports)
